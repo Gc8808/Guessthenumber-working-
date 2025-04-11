@@ -1,5 +1,8 @@
 const numbers = Array.from({ length: 50 }, (_, i) => i + 1);
 let selectedNumber = '';
+let winPts = 0
+let lossPts = 0
+
 
 document.getElementById('starterBtn').addEventListener('click', () => {
     document.getElementById('starterBtn').classList.add('d-none');
@@ -77,7 +80,10 @@ function startUpProcess() {
         let userGuess = document.getElementById('inputZone').value;
         console.log(`User Guess: ${userGuess}`);
         if (userGuess == selectedNumber) {
-            alert('Congratulations! You guessed the correct number!');
+            alert('You win!')
+           
+        
+            // Rest of logic
             document.getElementById('easyBtn').classList.remove('d-none');
             document.getElementById('mediumBtn').classList.remove('d-none');
             document.getElementById('hardBtn').classList.remove('d-none');
@@ -87,8 +93,8 @@ function startUpProcess() {
             document.getElementById('imgs').classList.remove('d-none');
             document.getElementById('clueBtn').classList.add('d-none');
             endGame(win);
-
-        } else {
+        }
+         else {
             alert('Wrong guess. Try again!');
             document.getElementById('inputZone').value = '';
             document.getElementById('inputZone').focus();
@@ -104,6 +110,31 @@ function startUpProcess() {
 }
 function clueProcess() {
 document.getElementById('clueBtn').addEventListener('click', () => {
-    alert(`Hint: The number is ${selectedNumber}.`);
+    let numberInfo = ''; // Declare this outside so it's accessible later
+
+    if (selectedNumber > 20) {
+        console.log("The number is greater than 20.");
+        numberInfo = 'The number is greater than 20.';
+    } else if (selectedNumber > 10) {
+        console.log("The number is greater than 10.");
+        numberInfo = 'The number is greater than 10 and less than 20.';
+    } else if (Math.abs(selectedNumber) <= 99) {
+        console.log("The number has one or two digits.");
+        numberInfo = 'The number is between 0 and 10';
+    }
+
+    document.getElementById('clueContent').textContent = numberInfo;
+
+    
 });
+}
+
+function endGame(win) {
+    if (win === true) {
+        winPts++;
+        document.getElementById('winsAm').textContent = winPts;
+    } else {
+        lossPts++;
+        document.getElementById('lossesAm').textContent = lossPts;
+    }
 }

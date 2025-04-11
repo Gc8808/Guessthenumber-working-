@@ -29,3 +29,27 @@ img {
     width: 800px;
     padding-top: 20px;
 }
+.easy {
+    background-color: lightgreen;
+    color: green; border: 2px solid;
+}
+
+.medium {
+    background-color: lightsalmon;
+    color: black; border: 2px solid;
+}
+
+
+.hard {
+    background-color: red;
+    color: darkred; border: 2px solid;
+}
+
+.cluebox {
+    padding-top: 20px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    border-color: red;
+    width: 100px;
+    height: 100px;
+}

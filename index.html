@@ -23,7 +23,10 @@
             <!-- place navbar here -->
         </header>
         <main class="body">
+           <div class="row">
             <h1>Guess the number...</h1>
+            <h6>Wins :</h6> <p id="winsAm"></p> <h6>Losses: </h6> <p id="LossesAm"></p> </div>
+            <div id="difficultySelection" class=""> <p id="textBox"></p> </div>
             <button class="rainbow" id="starterBtn">Play</button>
             <button class="d-none btn btn-success" id="easyBtn" onclick="selectedEasy()">Easy (1-10)</button>
             <button class="d-none btn btn-warning" id="mediumBtn" onclick="selectedMedium()" >Medium (1-20)</button>
@@ -52,6 +55,9 @@
                     </div>
                 </div>
             </div>
+            <div class="cluebox">
+            <p id="clueContent"></p> 
+        </div>
         </main>
         <footer>
             <!-- place footer here -->
