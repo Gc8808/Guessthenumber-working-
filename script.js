@@ -21,6 +21,7 @@ function selectedEasy() {
     document.getElementById('inputZone').classList.remove('d-none');
     document.getElementById('submitGuessBtn').classList.remove('d-none');
     document.getElementById('imgs').classList.add('d-none');
+    document.getElementById('clueBtn').classList.remove('d-none');
     startUpProcess();
 }
 
@@ -35,6 +36,7 @@ function selectedMedium() {
     document.getElementById('inputZone').classList.remove('d-none');
     document.getElementById('submitGuessBtn').classList.remove('d-none');
     document.getElementById('imgs').classList.add('d-none');
+    document.getElementById('clueBtn').classList.remove('d-none');
     startUpProcess();
 }
 
@@ -50,6 +52,7 @@ function selectedHard() {
     document.getElementById('inputZone').classList.remove('d-none');
     document.getElementById('submitGuessBtn').classList.remove('d-none');
     document.getElementById('imgs').classList.add('d-none');
+    document.getElementById('clueBtn').classList.remove('d-none');
     startUpProcess();
 }
 
@@ -64,10 +67,12 @@ function selectedImp() {
     document.getElementById('inputZone').classList.remove('d-none');
     document.getElementById('submitGuessBtn').classList.remove('d-none');
     document.getElementById('imgs').classList.add('d-none');
+    document.getElementById('clueBtn').classList.remove('d-none');
     startUpProcess();
 }
 
 function startUpProcess() {
+    
     document.getElementById('submitGuessBtn').addEventListener('click', () => {
         let userGuess = document.getElementById('inputZone').value;
         console.log(`User Guess: ${userGuess}`);
@@ -80,6 +85,7 @@ function startUpProcess() {
             document.getElementById('inputZone').classList.add('d-none');
             document.getElementById('submitGuessBtn').classList.add('d-none');
             document.getElementById('imgs').classList.remove('d-none');
+            document.getElementById('clueBtn').classList.add('d-none');
             endGame(win);
 
         } else {
@@ -95,4 +101,9 @@ function startUpProcess() {
         }
     });
 
+}
+function clueProcess() {
+document.getElementById('clueBtn').addEventListener('click', () => {
+    alert(`Hint: The number is ${selectedNumber}.`);
+});
 }
