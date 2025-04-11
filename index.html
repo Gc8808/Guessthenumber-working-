@@ -34,8 +34,11 @@
             <button class="d-none btn btn-dark" id="impossibleBtn" onclick="selectedImp()">Impossible (1-50)</button>
             <br>
 <br>
-<input type="number" id="inputZone" class="form-control  d-none" placeholder="Enter your number guess here...">
-<button class="d-none btn btn-primary" id="submitGuessBtn" onclick="submitGuess()">Submit Guess</button>
+<div class="mb-3">
+<div class="infobox ">
+<input type="number" id="inputZone" class="form-control  d-none " placeholder="Enter your number guess here...">  </div>
+
+<button class="d-none btn btn-primary" id="submitGuessBtn" onclick="submitGuess()">Submit Guess</button></div>
 <p id="feedback" class="mt-3"></p>
             <img src="hundreds-chart.jpg" id="imgs">
             <button class="d-none btn btn-secondary" id="clueBtn" onclick="clueProcess()">Need a clue?</button>
@@ -55,9 +58,13 @@
                     </div>
                 </div>
             </div>
-            <div class="cluebox">
-            <p id="clueContent"></p> 
+            
+            <p id="clueContent" class="text"></p> 
         </div>
+        
+        
+        <p id="howTo" class="howtoalt d-none" ></p>
+    </div>
         </main>
         <footer>
             <!-- place footer here -->

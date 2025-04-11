@@ -46,10 +46,45 @@ img {
 }
 
 .cluebox {
-    padding-top: 20px;
-    background-color: antiquewhite;
-    border-radius: 10px;
-    border-color: red;
-    width: 100px;
-    height: 100px;
+    background-color: #f0f0f0;
+    padding-top: 20px;   /* Top padding */
+    padding-right: 10px; /* Right padding */
+    padding-bottom: 10px; /* Bottom padding */
+    padding-left: 10px;  /* Left padding */
+    border: 1px solid #ccc;
 }
+
+ .text {
+    background-color: #ccc;
+    margin-top: 20px;   /* Top padding */
+    margin-bottom: 10px; /* Bottom padding */
+    border: 1px solid red;
+    width: 300px;
+    border-radius: 10px; 
+ }
+
+ .infobox  {
+padding-left: 150px;
+padding-right: 150px;
+
+ } 
+
+ .howto {
+    background-color: #ccc;
+    margin-top: 20px;   /* Top padding */
+    margin-bottom: 10px; /* Bottom padding */
+    border: 1px solid red;
+    width: 300px;
+    border-radius: 10px; 
+ }
+
+ .howtoalt {
+    background-color: #ccc;
+    margin-top: 20px;   /* Top padding */
+    margin-bottom: 10px; /* Bottom padding */
+    width: 300px;
+    border: 1px solid red;
+    width: 300px;
+    border-radius: 10px; 
+    padding: 5px;
+ }
