@@ -1,7 +1,8 @@
 const numbers = Array.from({ length: 50 }, (_, i) => i + 1);
 let selectedNumber = '';
-let winPts = 0
-let lossPts = 0
+let winPts = 0 ;
+let lossPts = 0 ;
+currentWrongGuesses = 0;
 
 
 document.getElementById('starterBtn').addEventListener('click', () => {
@@ -87,7 +88,7 @@ function selectedImp() {
 }
 
 function startUpProcess() {
-    
+    document.getElementById('wrongGuesses').textContent = currentWrongGuesses;
     document.getElementById('submitGuessBtn').addEventListener('click', () => {
         let userGuess = document.getElementById('inputZone').value;
         console.log(`User Guess: ${userGuess}`);
@@ -105,12 +106,30 @@ function startUpProcess() {
             document.getElementById('imgs').classList.remove('d-none');
             document.getElementById('clueBtn').classList.add('d-none');
             document.getElementById('howTo').classList.add('d-none');
-            endGame(win);
+            endGame(true);
+            document.getElementById('inputZone').value = '';
         }
          else {
             alert('Wrong guess. Try again!');
             document.getElementById('inputZone').value = '';
             document.getElementById('inputZone').focus();
+            currentWrongGuesses++;
+        }
+        if (currentWrongGuesses >= 6) {
+            alert('You lose! The correct number was ' + selectedNumber);
+            document.getElementById('easyBtn').classList.remove('d-none');
+            document.getElementById('mediumBtn').classList.remove('d-none');
+            document.getElementById('hardBtn').classList.remove('d-none');
+            document.getElementById('impossibleBtn').classList.remove('d-none');
+            document.getElementById('inputZone').classList.add('d-none');
+           // document.getElementById('submitGuessBtn').classList.add('d-none');
+            document.getElementById('imgs').classList.remove('d-none');
+            document.getElementById('clueBtn').classList.add('d-none');
+            document.getElementById('howTo').classList.add('d-none');
+            lossPts++;
+            document.getElementById('LossesAm').textContent = lossPts;
+            document.getElementById('inputZone').value = '';
+            currentWrongGuesses = 0;
         }
     });
     document.getElementById('inputZone').focus();
@@ -119,8 +138,8 @@ function startUpProcess() {
             document.getElementById('submitGuessBtn').click();
         }
     });
-
 }
+
 function clueProcess() {
 document.getElementById('clueBtn').addEventListener('click', () => {
     let numberInfo = ''; // Declare this outside so it's accessible later
@@ -147,7 +166,7 @@ function endGame(win) {
         winPts++;
         document.getElementById('winsAm').textContent = winPts;
     } else {
-        lossPts++;
-        document.getElementById('lossesAm').textContent = lossPts;
+     
+        
     }
 }
