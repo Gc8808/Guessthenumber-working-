@@ -103,21 +103,31 @@ function startGame() {
 }
 
 function clueProcess() {
-    // Remove existing clue listener if it exists
-    if (clueHandler) {
-        document.getElementById('clueBtn').removeEventListener('click', clueHandler);
+    
+    let numberInfo = '';
+
+    if (selectedNumber >= 1 && selectedNumber <= 5) {
+        numberInfo = 'The number is between 1 and 5.';
+    } else if (selectedNumber >= 6 && selectedNumber <= 10) {
+        numberInfo = 'The number is between 6 and 10.';
+    } else if (selectedNumber >= 11 && selectedNumber <= 20) {
+        numberInfo = 'The number is between 11 and 20.';
+    } else if (selectedNumber >= 21 && selectedNumber <= 30) {
+        numberInfo = 'The number is between 21 and 30.';
+    } else if (selectedNumber >= 31 && selectedNumber <= 40) {
+        numberInfo = 'The number is between 31 and 40.';
+    } else if (selectedNumber >= 41 && selectedNumber <= 50) {
+        numberInfo = 'The number is between 41 and 50.';
+    } else {
+        numberInfo = 'Number is out of range!';
     }
+    
+
+   
 
     // Define new clue handler
     clueHandler = () => {
-        let numberInfo = '';
-        if (selectedNumber > 20) {
-            numberInfo = 'The number is greater than 20.';
-        } else if (selectedNumber > 10) {
-            numberInfo = 'The number is greater than 10 and less than or equal to 20.';
-        } else {
-            numberInfo = 'The number is between 1 and 10.';
-        }
+     
         document.getElementById('clueContent').textContent = numberInfo;
     };
 

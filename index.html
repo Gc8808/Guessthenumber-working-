@@ -23,9 +23,9 @@
         <header>
             <!-- place navbar here -->
         </header>
-        <main class="body">
+        <main class="body bg container-fluid">
            <div class="row">
-            <h1>Guess the number...</h1>
+            <h1 class="title">Guess the number...</h1>
             <h6>Wins :</h6> <p id="winsAm"></p> <h6>Losses: </h6> <p id="LossesAm"></p> </div>
             <div id="difficultySelection" class=""> <p id="textBox"></p> </div>
             <button class="rainbow" id="starterBtn">Play</button>
@@ -43,22 +43,7 @@
 <p id="feedback" class="mt-3"></p>
             <img src="hundreds-chart.jpg" id="imgs">
             <button class="d-none btn btn-secondary" id="clueBtn" onclick="clueProcess()">Need a clue?</button>
-            <div class="modal d-none" id="gameModal" tabindex="-1" aria-labelledby="gameModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="gameModalLabel">Game Information</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Welcome to the Guess the Number game! Select a difficulty level to start playing.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             
             <p id="clueContent" class="text d-none"></p> 
         </div>

@@ -1,8 +1,25 @@
 * {
     margin: auto;
     text-align: center;
-    background-color: aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+
 }
+
+
+html {
+    height: 100%;
+    animation: bg 10s infinite alternate;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    animation: bg 10s infinite alternate;
+}
+
 
 h1 {
     padding-bottom: 50px;
@@ -25,8 +42,8 @@ h1 {
 }
 
 img {
-    height: 800px;
-    width: 800px;
+    height: 400px;
+    width: 600px;
     padding-top: 20px;
 }
 .easy {
@@ -88,3 +105,29 @@ padding-right: 150px;
     border-radius: 10px; 
     padding: 5px;
  }
+
+ h1 {
+    font-size: 50px;
+    color: #333;
+    text-shadow: 2px 2px 4px #aaa;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    
+ }
+
+ @keyframes bg {
+    0% { background-color: whitesmoke; }
+    25% { background-color: lightskyblue; }
+    50% { background-color: skyblue; }
+    75% { background-color:  lightblue; }
+    100% { background-color: lightcyan; }
+ }
+
+
+    .bg {
+        animation: bg 20s infinite;
+        color: black;
+        
+
+
+    }
